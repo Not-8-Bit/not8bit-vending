@@ -17,7 +17,7 @@ Better QB-Core vending
        TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
     end
 ```
-# And comment out lines 732 - 737
+## And comment out lines 732 - 737
 
 ```
  elseif VendingMachine then
@@ -28,7 +28,7 @@ Better QB-Core vending
      TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
 ```
 
-# And comment out lines 732 - 737
+## And comment out lines 732 - 737
 ```
 -- CreateThread(function()
 --     if Config.UseTarget then
@@ -47,8 +47,8 @@ Better QB-Core vending
 --     end
 -- end)
 ```
-# Then add not8bit-vending to your resources folder
-# Then add not8bit-vending to your server.cfg
+## Then add not8bit-vending to your resources folder
+## Then add not8bit-vending to your server.cfg
 ```
 ensure not8bit-vending
 ```
