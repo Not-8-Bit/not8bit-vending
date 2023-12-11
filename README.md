@@ -30,22 +30,22 @@ Better QB-Core vending
 
 ## And comment out lines qb-inventory/client/main.lua 732 - 737
 ```
--- CreateThread(function()
---     if Config.UseTarget then
---         exports['qb-target']:AddTargetModel(Config.VendingObjects, {
---             options = {
---                 {
---                     icon = 'fa-solid fa-cash-register',
---                     label = Lang:t('menu.vending'),
---                     action = function()
---                         OpenVending()
---                     end
---                 },
---             },
---             distance = 2.5
---         })
---     end
--- end)
+    CreateThread(function()
+        if Config.UseTarget then
+            exports['qb-target']:AddTargetModel(Config.VendingObjects, {
+                options = {
+                    {
+                        icon = 'fa-solid fa-cash-register',
+                        label = Lang:t('menu.vending'),
+                        action = function()
+                            OpenVending()
+                        end
+                    },
+                },
+                distance = 2.5
+            })
+        end
+    end)
 ```
 ## Then add not8bit-vending to your resources folder
 ## Then add not8bit-vending to your server.cfg
