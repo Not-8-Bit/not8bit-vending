@@ -1,12 +1,12 @@
-# not8bit-vending
+# Not 8 Bit Vending
 Better QB-Core vending
 
 # How to use
 
+# You have two choices
 
-## You have two choices
-
-# Comment out lines 75 - 82
+# Option 1:
+## Comment out lines 75 - 82
 ```
     Opens the vending machine shop
     local function OpenVending()
@@ -52,3 +52,7 @@ Better QB-Core vending
 ```
 ensure not8bit-vending
 ```
+
+# Option 2:
+
+## Integrate the changes from not8bit-vending into qb-inventory
