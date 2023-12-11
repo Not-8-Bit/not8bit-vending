@@ -8,7 +8,7 @@ Better QB-Core vending
 # Option 1:
 ## Comment out lines qb-inventory/client/main.lua 75 - 82
 ```
-    Opens the vending machine shop
+ -- Opens the vending machine shop
     local function OpenVending()
        local ShopItems = {}
        ShopItems.label = 'Vending Machine'
