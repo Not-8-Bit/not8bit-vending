@@ -1,26 +1,24 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-local PlayerData = QBCore.Functions.GetPlayerData()
-
 local function OpenVending(model)
-    local ShopItems = {}
-    ShopItems.label = "Vending Machine"
-    ShopItems.items = Config.VendingItems[model] or {}
-    ShopItems.slots = #Config.VendingItems[model] or 0
-    TriggerServerEvent("inventory:server:OpenInventory", "shop", "Vendingshop_"..math.random(1, 99), ShopItems)
+    local ShopItems   = {}
+    local machineData = Config.VendingItems[model] or {}
+    ShopItems.label   = machineData.title or "Vending Machine"
+    ShopItems.items   = machineData.items or {}
+    ShopItems.slots   = #machineData.items or 0
+    TriggerServerEvent( 'inventory:server:OpenInventory' , 'shop' , "Vendingshop_" .. math.random( 1 , 99 ) , ShopItems )
 end
 
 CreateThread(function()
-    for model, _ in pairs(Config.VendingItems) do
-        exports['qb-target']:AddTargetModel(model, {
+    for model , data in pairs( Config.VendingItems ) do
+        exports['qb-target']:AddTargetModel( model , {
             options = {
                 {
-                    icon = "fa-solid fa-cash-register",
-                    label = "We Are Vending",
+                    icon   = 'fa-solid fa-cash-register'    ,
+                    label  = data.label or "We Are Vending" ,
                     action = function()
-                        OpenVending(model)
+                        OpenVending( model )
                     end
-                },
-            },
+                } ,
+            } ,
             distance = 2.5
         })
     end

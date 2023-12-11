@@ -1,7 +1,9 @@
-name 'Holiday Vending'
-author 'Holiday'
+name 'Not 8 Bit Vending'
+author 'Not 8 Bit - Holiday'
 version 'v1.0.0'
-description 'Vending, but as it should have been!'
+
+description 'Vending with a little more.'
+
 fx_version 'cerulean'
 game 'gta5'
 
@@ -12,3 +14,5 @@ shared_scripts {
 client_scripts {
     'client/*.lua' 
 }
+
+lua54 'yes'

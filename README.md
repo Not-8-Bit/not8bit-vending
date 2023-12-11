@@ -1,6 +1,16 @@
 # Not 8 Bit Vending
 Better QB-Core vending
 
+# Features 
+```
+Unlimited model support.
+Each machine has its own items.
+Each item in each of the machines have their own prices, amount, and type.
+Each item still supports its own meta information.
+Each machine has its own label in target.
+Each machine has its own title while in the inventory window. 
+```
+
 # How to use
 
 # You have two choices
