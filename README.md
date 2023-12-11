@@ -6,7 +6,7 @@ Better QB-Core vending
 # You have two choices
 
 # Option 1:
-## Comment out lines 75 - 82
+## Comment out lines qb-inventory/client/main.lua 75 - 82
 ```
     Opens the vending machine shop
     local function OpenVending()
@@ -17,7 +17,7 @@ Better QB-Core vending
        TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
     end
 ```
-## And comment out lines 732 - 737
+## And comment out lines qb-inventory/client/main.lua 732 - 737
 
 ```
  elseif VendingMachine then
@@ -28,7 +28,7 @@ Better QB-Core vending
      TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
 ```
 
-## And comment out lines 732 - 737
+## And comment out lines qb-inventory/client/main.lua 732 - 737
 ```
 -- CreateThread(function()
 --     if Config.UseTarget then
