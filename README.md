@@ -1,5 +1,4 @@
 # Not 8 Bit Vending
-Better QB-Core vending
 
 # Features 
 ```
