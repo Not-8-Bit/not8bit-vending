@@ -1,13 +1,13 @@
-Config = {}
+Config = {} -- Don't touch
 
-Config.VendingItems = {
-    prop_vend_soda_01 = {
+Config.VendingItems = { -- Only change if you know what you are doing
+    prop_vend_soda_01 = { -- Model name of item to use
         title = "Cola Machine", -- Title in the inventory menu after opening a machine
         label = "We Are Vending", -- Label on the machine when using target
         items = { -- Items in the machine
-            -- Item name            item price, amount available, meta info if used, type = {weapon , item}, slot to show it in
+        -- Item name,           item price, amount available, meta info if used, type = {weapon , item}, slot to show item
             { name = 'water_bottle', price = 7 , amount = 50 , info = { uses = 4 } , type = 'item' , slot = 1 } ,
-            { name = 'ecola'       , price = 6 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 5 } ,
+            { name = 'ecola'       , price = 6 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 2 } ,
         }
     } ,
     prop_vend_water_01 = {
