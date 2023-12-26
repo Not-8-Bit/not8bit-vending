@@ -1,12 +1,12 @@
 NV = {} -- Don't touch
-NV.VersionCheck
+NV.VersionCheck = true --enable/disable the version checker
 
 NV.VendingItems = { -- Only change if you know what you are doing
     prop_vend_soda_01 = { -- Model name of item to use
         title = "Cola Machine", -- Title in the inventory menu after opening a machine
         label = "We Are Vending", -- Label on the machine when using target
-        items = { -- Items in the machine
-        -- Item name,           item price, amount available, meta info if used, type = {weapon , item}, slot to show item
+        items = { -- Table of items in the machine
+            -- Item name,         item price, amount available, meta info if used, type = weapon/item, slot to show item
             { name = 'water_bottle', price = 7 , amount = 50 , info = { uses = 4 } , type = 'item' , slot = 1 } ,
             { name = 'ecola'       , price = 6 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 2 } ,
         }
@@ -52,7 +52,7 @@ NV.VendingItems = { -- Only change if you know what you are doing
     } ,
     prop_food_bs_soda_01 = {
         title = "Diabeties In A Cup!",
-        label = "Type 2 here we come",
+        label = "Type 2 Here We Come",
         items = {
             { name = 'litreofcola' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
             { name = 'sodacup'     , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
@@ -180,7 +180,7 @@ NV.VendingItems = { -- Only change if you know what you are doing
             { name = 'lsapplebeer'    , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
         }
     } ,
-    m23_2_prop_m32_vend_drink_01a = { --Newer default prop
+    m23_2_prop_m32_vend_drink_01a = { --Newer default prop - Junk machine
         title = "Energy On The Go!",
         label = "Lets see if our heart holds out.",
         items = {
@@ -188,7 +188,7 @@ NV.VendingItems = { -- Only change if you know what you are doing
             { name = 'bobross' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
         }
     } ,
-    sf_prop_sf_vend_drink_01a = { --Newer default prop - same as above but different prop for some reason
+    sf_prop_sf_vend_drink_01a = { --Newer default prop - same as above but different prop for some reasonm - Junk machine
         title = "Energy On The Go!",
         label = "Lets see if our heart holds out.",
         items = {
