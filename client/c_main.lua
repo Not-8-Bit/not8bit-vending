@@ -1,6 +1,6 @@
 local function OpenVending(model)
     local ShopItems   = {}
-    local machineData = Config.VendingItems[model] or {}
+    local machineData = NV.VendingItems[model] or {}
     ShopItems.label   = machineData.title or "Vending Machine"
     ShopItems.items   = machineData.items or {}
     ShopItems.slots   = #machineData.items or 0
@@ -8,7 +8,7 @@ local function OpenVending(model)
 end
 
 CreateThread(function()
-    for model , data in pairs( Config.VendingItems ) do
+    for model , data in pairs( NV.VendingItems ) do
         exports['qb-target']:AddTargetModel( model , {
             options = {
                 {

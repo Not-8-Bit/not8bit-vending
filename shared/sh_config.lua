@@ -1,6 +1,7 @@
-Config = {} -- Don't touch
+NV = {} -- Don't touch
+NV.VersionCheck
 
-Config.VendingItems = { -- Only change if you know what you are doing
+NV.VendingItems = { -- Only change if you know what you are doing
     prop_vend_soda_01 = { -- Model name of item to use
         title = "Cola Machine", -- Title in the inventory menu after opening a machine
         label = "We Are Vending", -- Label on the machine when using target
