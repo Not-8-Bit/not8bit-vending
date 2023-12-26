@@ -5,7 +5,7 @@ if NV.CheckForUpdates then
     end
 
     local function CheckMenuVersion()
-        PerformHttpRequest('https://raw.githubusercontent.com/TayMcKenzieNZ/rpemotes/master/version.txt', function(err, text, headers)
+        PerformHttpRequest('https://raw.githubusercontent.com/Not-8-Bit/not8bit-vending/main/version.txt?token=GHSAT0AAAAAACMBRQVMG5EIP75LNLQJ52H2ZMLD5WA', function(err, text, headers)
             local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
             if not text then
                 VersionLog('error', 'Currently unable to run a version check.')
