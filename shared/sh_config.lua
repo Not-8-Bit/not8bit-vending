@@ -26,7 +26,7 @@ Config.VendingItems = { -- Only change if you know what you are doing
         }
     } ,
     prop_vend_soda_02 = {
-        title = "Coffee Machine",
+        title = "Sprunk Machine",
         label = "We Are Vending",
         items = {
             { name = 'water_bottle' , price = 7 , amount = 50 , info = { uses = 4 } , type = 'item' , slot = 1 } ,
@@ -39,6 +39,30 @@ Config.VendingItems = { -- Only change if you know what you are doing
         items = {
             { name = 'capucciano' , price = 25 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 1 } ,
             { name = 'coffee'     , price = 15 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 2 } ,
+        }
+    } ,
+    prop_coffee_mac_01 = {
+        title = "Coffee Machine",
+        label = "We Are Vending",
+        items = {
+            { name = 'capucciano' , price = 25 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 1 } ,
+            { name = 'coffee'     , price = 15 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 2 } ,
+        }
+    } ,
+    prop_food_bs_soda_01 = {
+        title = "Diabeties In A Cup!",
+        label = "Type 2 here we come",
+        items = {
+            { name = 'litreofcola' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
+            { name = 'sodacup'     , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
+        }
+    } ,
+    prop_tea_urn = { 
+        title = "Crumpets?",
+        label = "Tea Time",
+        items = {
+            { name = 'tea'      , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
+            { name = 'hotwater' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
         }
     } ,
     prop_vend_fridge01 = {
@@ -88,6 +112,14 @@ Config.VendingItems = { -- Only change if you know what you are doing
         }
     } ,
     prop_juice_dispenser = {
+        title = "Juice Machine",
+        label = "Juice Vending",
+        items = {
+            { name = 'grapejuice' , price =  7 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 1 } ,
+            { name = 'applejuice' , price = 15 , amount = 50 , info = { uses = 2 } , type = 'item' , slot = 2 } ,
+        }
+    } ,
+    prop_slush_dispenser = {
         title = "Slushy Machine",
         label = "Squishy Vending",
         items = {
@@ -145,6 +177,22 @@ Config.VendingItems = { -- Only change if you know what you are doing
         items = {
             { name = 'lsoriginalbeer' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
             { name = 'lsapplebeer'    , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
+        }
+    } ,
+    m23_2_prop_m32_vend_drink_01a = { --Newer default prop
+        title = "Energy On The Go!",
+        label = "Lets see if our heart holds out.",
+        items = {
+            { name = 'redgull' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
+            { name = 'bobross' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
+        }
+    } ,
+    sf_prop_sf_vend_drink_01a = { --Newer default prop - same as above but different prop for some reason
+        title = "Energy On The Go!",
+        label = "Lets see if our heart holds out.",
+        items = {
+            { name = 'redgull' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
+            { name = 'bobross' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
         }
     } ,
 }
