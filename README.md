@@ -16,7 +16,6 @@ Each machine has its own title while in the inventory window.
 ```
 
 # How to use
-
 # You have two choices
 
 # Option 1:
