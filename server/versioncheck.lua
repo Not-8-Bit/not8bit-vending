@@ -5,7 +5,7 @@ if NV.VersionCheck then
     end
 
     local function CheckMenuVersion()
-        PerformHttpRequest('https://raw.githubusercontent.com/Not-8-Bit/not8bit-vending/main/version.txt?token=GHSAT0AAAAAACMBRQVNGQJSPTJBD5Y7PXSKZMLGQRA', function(err, text, headers)
+        PerformHttpRequest('https://raw.githubusercontent.com/Not-8-Bit/not8bit-vending/main/version.txt?token=GHSAT0AAAAAACLCFT6WIQFJJEGF3UHWOONMZMLP4MQ', function(err, text, headers)
             local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
             if not text then
                 VersionLog('error', 'Currently unable to run a version check.')
@@ -14,7 +14,7 @@ if NV.VersionCheck then
             VersionLog('success', ('Current Version: %s'):format(currentVersion))
             VersionLog('success', ('Latest Version: %s'):format(text))
             if text:gsub("%s+", "") == currentVersion:gsub("%s+", "") then
-                VersionLog('success', 'You are running the latest version of not8bit-vending by Holiday.')
+                VersionLog('success', ('You are running the latest version %s of not8bit-vending by lllHolidaylll.'):format(currentVersion))
             else
                 VersionLog('error', ('You are currently running an outdated version of not8bit-vending, please update to version %s'):format(text))
             end

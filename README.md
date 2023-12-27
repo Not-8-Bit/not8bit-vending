@@ -8,18 +8,18 @@ Nothing right now
 # Features 
 ```
 Unlimited model support.
-Each machine has its own items.
-Each item in each of the machines have their own prices, amount, and type.
+Each model type has its own items.
+Each item in each of the model types, have their own prices, amount, and type.
 Each item still supports its own meta information.
-Each machine has its own label in target.
-Each machine has its own title while in the inventory window. 
+Each model type has its own label in target.
+Each model type has its own title while in the inventory window. 
 ```
 
 # How to use
 # You have two choices
 
 # Option 1:
-## Comment out lines qb-inventory/client/main.lua 75 - 82
+## Comment out lines qb-inventory/client/main.lua ~ 75 - 82
 ```
  -- Opens the vending machine shop
     local function OpenVending()
@@ -30,7 +30,7 @@ Each machine has its own title while in the inventory window.
        TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
     end
 ```
-## And comment out lines qb-inventory/client/main.lua 732 - 737
+## And comment out lines qb-inventory/client/main.lua ~ 732 - 737
 
 ```
  elseif VendingMachine then
@@ -41,7 +41,7 @@ Each machine has its own title while in the inventory window.
      TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
 ```
 
-## And comment out lines qb-inventory/client/main.lua 732 - 737
+## And comment out lines qb-inventory/client/main.lua ~ 732 - 737
 ```
     CreateThread(function()
         if Config.UseTarget then
@@ -70,10 +70,12 @@ ensure not8bit-vending
 
 ## Integrate the changes from not8bit-vending into qb-inventory
 
+
+
 # License
 ```
     Not 8 Bit Menu
-    Copyright (C) 2023  Ronald Nelson
+    Copyright (C) 2023  lllHolidaylll
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
