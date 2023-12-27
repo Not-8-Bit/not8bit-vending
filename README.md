@@ -9,6 +9,12 @@ Nothing
 ```
 None
 ```
+# Dependencies
+```
+qb-target
+qb-core
+qb-inventory
+```
 
 # Features 
 ```
@@ -82,8 +88,7 @@ ensure not8bit-vending
 
 ## Integrate the changes from not8bit-vending into qb-inventory
 
-
-
+## Done 
 # License
 ```
     Not 8 Bit Menu
