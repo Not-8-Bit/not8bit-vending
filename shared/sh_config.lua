@@ -1,5 +1,4 @@
 NV = {} -- Don't touch
-NV.VersionCheck = true --enable/disable the version checker
 
 NV.VendingItems = { -- Only change if you know what you are doing
     prop_vend_soda_01 = { -- Model name of item to use
