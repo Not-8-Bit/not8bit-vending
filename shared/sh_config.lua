@@ -172,14 +172,6 @@ NV.VendingItems = { -- Only change if you know what you are doing
             { name = 'gumball' , price = 1 , amount = 400 , info = { } , type = 'item' , slot = 1 } ,
         }
     } ,
-    bzzz_prop_beer_machine = { --Custom Prop And Items From Mrs Bzzz
-        title = "Liquid Star",
-        label = "Reach For The Star",
-        items = {
-            { name = 'lsoriginalbeer' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
-            { name = 'lsapplebeer'    , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
-        }
-    } ,
     m23_2_prop_m32_vend_drink_01a = { --Newer default prop - Junk machine
         title = "Energy On The Go!",
         label = "Lets see if our heart holds out.",
@@ -194,6 +186,17 @@ NV.VendingItems = { -- Only change if you know what you are doing
         items = {
             { name = 'redgull' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
             { name = 'bobross' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
+        }
+    } ,
+--===================================================================================--
+--              ****************Custom Props Below******************                 --
+--===================================================================================--
+    bzzz_prop_beer_machine = { --Custom Prop And Items From Mrs Bzzz LINK: https://bzzz.tebex.io/
+        title = "Liquid Star",
+        label = "Reach For The Star",
+        items = {
+            { name = 'lsoriginalbeer' , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 1 } ,
+            { name = 'lsapplebeer'    , price = 1 , amount = 400 , info = { uses = 5 } , type = 'item' , slot = 2 } ,
         }
     } ,
 }

@@ -2,7 +2,12 @@
 
 # To Do:
 ```
-Nothing right now
+Nothing
+```
+
+# Bugs
+```
+None
 ```
 
 # Features 
@@ -60,6 +65,13 @@ Each model type has its own title while in the inventory window.
         end
     end)
 ```
+
+## Add/Update items in the shared/sh_config.lua
+```
+You will have to update the shared/sh_config.lua with your items from the qb-core/shared/items.lua of your server. Or you can add the items I have listed to your qb-core/shared/items.lua of your server. 
+I do not provide these or any images for the items listed.
+``` 
+
 ## Then add not8bit-vending to your resources folder
 ## Then add not8bit-vending to your server.cfg
 ```
