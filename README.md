@@ -5,18 +5,23 @@
 Nothing
 ```
 
-# Bugs
+# Discord: 
+```
+https://discord.gg/syG8ZpZ6je
+```
+
+# Bugs:
 ```
 None
 ```
-# Dependencies
+# Dependencies:
 ```
 qb-target
 qb-core
 qb-inventory
 ```
 
-# Features 
+# Features: 
 ```
 Unlimited model support.
 Each model type has its own items.
