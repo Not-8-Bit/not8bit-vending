@@ -35,7 +35,7 @@ Each model type has its own title while in the inventory window.
 # You have two choices
 
 # Option 1:
-## And comment out lines qb-inventory/config/config.lua ~ 32 - 42
+## Comment out lines qb-inventory/config/config.lua ~ 32 - 42
 
 ```
     VendingObjects = {
