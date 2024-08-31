@@ -7,7 +7,7 @@ Nothing
 
 # Discord: 
 
-**https://discord.gg/syG8ZpZ6je**
+**https://discord.gg/uxHBscC8gQ**
 
 
 # Bugs:
