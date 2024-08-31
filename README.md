@@ -35,46 +35,129 @@ Each model type has its own title while in the inventory window.
 # You have two choices
 
 # Option 1:
-## Comment out lines qb-inventory/client/main.lua ~ 75 - 82
-```
- -- Opens the vending machine shop
-    local function OpenVending()
-       local ShopItems = {}
-       ShopItems.label = 'Vending Machine'
-       ShopItems.items = Config.VendingItem
-       ShopItems.slots = #Config.VendingItem
-       TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
-    end
-```
-## And comment out lines qb-inventory/client/main.lua ~ 732 - 737
+## And comment out lines qb-inventory/config/config.lua ~ 32 - 42
 
 ```
- elseif VendingMachine then
-     local ShopItems = {}
-     ShopItems.label = 'Vending Machine'
-     ShopItems.items = Config.VendingItem
-     ShopItems.slots = #Config.VendingItem
-     TriggerServerEvent('inventory:server:OpenInventory', 'shop', 'Vendingshop_' .. math.random(1, 99), ShopItems)
+    VendingObjects = {
+        'prop_vend_soda_01',
+        'prop_vend_soda_02',
+        'prop_vend_water_01',
+        'prop_vend_coffe_01',
+    },
+
+    VendingItems = {
+        { name = 'kurkakola',    price = 4, amount = 50 },
+        { name = 'water_bottle', price = 4, amount = 50 },
+    },
 ```
 
-## And comment out lines qb-inventory/client/main.lua ~ 732 - 737
+## And comment out lines qb-inventory/client/main.lua ~ 274 - 286
 ```
-    CreateThread(function()
-        if Config.UseTarget then
-            exports['qb-target']:AddTargetModel(Config.VendingObjects, {
-                options = {
-                    {
-                        icon = 'fa-solid fa-cash-register',
-                        label = Lang:t('menu.vending'),
-                        action = function()
-                            OpenVending()
-                        end
-                    },
-                },
-                distance = 2.5
-            })
+CreateThread(function()
+    exports['qb-target']:AddTargetModel(Config.VendingObjects, {
+        options = {
+            {
+                type = 'server',
+                event = 'qb-inventory:server:openVending',
+                icon = 'fa-solid fa-cash-register',
+                label = Lang:t('menu.vending'),
+            },
+        },
+        distance = 2.5
+    })
+end)
+```
+
+## Replace lines qb-inventory/server/main.lua ~ 139 - 151
+```
+RegisterNetEvent('qb-inventory:server:openVending', function(data)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+    CreateShop({
+        name = 'vending',
+        label = 'Vending Machine',
+        coords = data.coords,
+        slots = #Config.VendingItems,
+        items = Config.VendingItems
+    })
+    OpenShop(src, 'vending')
+end)
+```
+## WITH THIS:
+```
+RegisterNetEvent('qb-inventory:server:openVending', function(data)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if not Player then return end
+    CreateShop({
+        name = 'vending',
+        label = data.label,
+        coords = GetEntityCoords(GetPlayerPed(src)),
+        slots = data.slots,
+        items = data.items
+    })
+    OpenShop(src, 'vending')
+end)
+```
+
+## Replace lines qb-inventory/server/functions.lua ~ 495 - 523
+```
+--- @param source number The player's server ID.
+--- @param name string The identifier of the inventory to open.
+function OpenShop(source, name)
+    if not name then return end
+    local Player = QBCore.Functions.GetPlayer(source)
+    if not Player then return end
+    if not RegisteredShops[name] then return end
+    local playerPed = GetPlayerPed(source)
+    local playerCoords = GetEntityCoords(playerPed)
+    if RegisteredShops[name].coords then
+        local shopDistance = vector3(RegisteredShops[name].coords.x, RegisteredShops[name].coords.y, RegisteredShops[name].coords.z)
+        if shopDistance then
+            local distance = #(playerCoords - shopDistance)
+            if distance > 5.0 then return end
         end
-    end)
+    end
+    local formattedInventory = {
+        name = 'shop-' .. RegisteredShops[name].name,
+        label = RegisteredShops[name].label,
+        maxweight = 5000000,
+        slots = #RegisteredShops[name].items,
+        inventory = RegisteredShops[name].items
+    }
+    TriggerClientEvent('qb-inventory:client:openInventory', source, Player.PlayerData.items, formattedInventory)
+end
+
+exports('OpenShop', OpenShop)
+```
+## WITH THIS:
+```
+--- @param source number The player's server ID.
+--- @param name string The identifier of the inventory to open.
+function OpenShop(source, name)
+    if not name then return end
+    local Player = QBCore.Functions.GetPlayer(source)
+    if not Player then return end
+    if not RegisteredShops[name] then return end
+    local playerPed = GetPlayerPed(source)
+    local playerCoords = GetEntityCoords(playerPed)
+    local shopData = RegisteredShops[name]
+    if shopData.coords then
+        local shopDistance = vector3(shopData.coords.x, shopData.coords.y, shopData.coords.z)
+        local distance = #(playerCoords - shopDistance)
+        if distance > 5.0 then return end
+    end
+    local formattedInventory = {
+        name      = 'shop-' .. shopData.name,
+        label     = shopData.label,
+        maxweight = 5000000,
+        slots     = shopData.slots,
+        inventory = shopData.items
+    }
+    TriggerClientEvent('qb-inventory:client:openInventory', source, Player.PlayerData.items, formattedInventory)
+end
+exports('OpenShop', OpenShop)
 ```
 
 ## Add/Update items in the shared/sh_config.lua
@@ -112,4 +195,3 @@ ensure not8bit-vending
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```
-# This is a modified version of the vending in qb-inventory

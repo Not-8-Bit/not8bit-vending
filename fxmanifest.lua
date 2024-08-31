@@ -1,6 +1,6 @@
 name 'Not 8 Bit Vending'
 author 'Not 8 Bit - lllHolidaylll'
-version 'v1.0.3'
+version 'v2.0.0'
 
 description 'Vending with a little more.'
 
